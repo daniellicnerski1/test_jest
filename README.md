@@ -31,6 +31,7 @@ Este projeto utiliza **Jest** e **Puppeteer** para automação de testes em Node
 
 3. Configure as variáveis de ambiente no arquivo `.env`:
    ```plaintext
+   Criar pasta fora do projeto raiz
    EMAIL=<seu_email>
    PASSWORD=<sua_senha>
    GITHUB_USER=<seu_usuario_github>
