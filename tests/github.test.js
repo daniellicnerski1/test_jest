@@ -5,7 +5,7 @@ const path = require('path');
 
 dotenv.config();
 
-const { EMAIL, PASSWORD, GITHUB_USER } = process.env;
+const { PASSWORD, GITHUB_USER } = process.env;
 
 
 jest.setTimeout(10000);
@@ -122,16 +122,13 @@ describe('GitHub Automation Test Suite', () => {
       await page.waitForNavigation({ waitUntil: 'networkidle2' });
       await page.waitForTimeout(1000);
 
-
       const imgDir = path.join(__dirname, '../img');
       
-
       const screenshotPath = path.join(imgDir, 'screenshot.png');
       await page.screenshot({ path: screenshotPath });
 
     });
 
-    
     it('Loggout', async () => {
       await page.waitForSelector('span.Button-label img.avatar', { visible: true, timeout: 10000 });
       await page.click('span.Button-label img.avatar');
@@ -141,8 +138,14 @@ describe('GitHub Automation Test Suite', () => {
       const element = await page.waitForXPath(xpath, { visible: true });
     
       await page.evaluate(el => el.click(), element);
-      await page.waitForTimeout(10000);
+      await page.waitForTimeout(3000);
     });
 
+    it('Should verify the loggout', async () => {
+      const expectedUrl = 'https://github.com/logout';
+      const currentUrl = page.url();
+
+      expect(currentUrl).toBe(expectedUrl);
+    });
   });
 });
