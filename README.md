@@ -1,4 +1,3 @@
-# Port-Louis QA
 
 Este projeto utiliza **Jest** e **Puppeteer** para automação de testes em Node.js.
 
@@ -21,8 +20,8 @@ Este projeto utiliza **Jest** e **Puppeteer** para automação de testes em Node
 
 1. Clone o repositório:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
-   cd port-louis-qa
+   git clone https://github.com/daniellicnerski1/test_jest.git
+   cd ..
    ```
 
 2. Instale as dependências:
@@ -46,19 +45,9 @@ npm test
 
 ### Estrutura dos testes
 
-Os testes estão organizados no diretório `tests/`. Cada arquivo representa um conjunto de casos de teste. Por exemplo:
 
 - `github.test.js`: Testa funcionalidades relacionadas ao login e interações com o GitHub.
 
-### Logs de erro
-Os erros encontrados durante os testes serão exibidos no console para facilitar o debug.
-
-## Dicas de Uso
-
-- Sempre atualize as dependências para manter o projeto compatível com as versões mais recentes:
-  ```bash
-  npm update
-  ```
 
 - Use o modo `headless: false` no Puppeteer para visualizar as ações durante os testes.
 
